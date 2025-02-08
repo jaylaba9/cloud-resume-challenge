@@ -1,11 +1,9 @@
 'use strict';
+import { apiUrl } from './config.js';
 
 const visitorCount = document.querySelector('.visitor-count');
 
 let countValue = 0;
-
-const apiUrl =
-  'https://xl1jph6hfd.execute-api.eu-central-1.amazonaws.com/prod/counter-api';
 
 const requestOptions = {
   method: 'POST',
