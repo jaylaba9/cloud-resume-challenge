@@ -18,10 +18,20 @@ def lambda_handler(event, context):
         return {
             'statusCode': 405,
             'headers': headers,
-            'body': json.dumps({'error:' f'Method {event['httpMethod']} not allowed. Use POST instead.'})
+            'body': json.dumps({'error': f'Method {event['httpMethod']} not allowed. Use POST instead.'})
         }
 
     try:
+        # parse body
+        try:
+            body = json.loads(event['body']) if event.get('body') else {} # if body is empty or None, return {} instead of parsing
+        except (TypeError, json.JSONDecodeError):
+            return {
+                'statusCode': 400,
+                'headers': headers,
+                'body': json.dumps({'error': 'Invalid JSON format'})
+						}
+
         # get current item
         current_item = table.get_item(Key={'id': 'visitor'})
 
@@ -37,7 +47,7 @@ def lambda_handler(event, context):
             
         # item exists
         else:
-          current_count = current_item.get('Item', {}).get('count', 0)
+          current_count = int(current_item.get('Item', {}).get('count', 0))
 
         # update visitor counter in dynamodb table
         response = table.update_item(
@@ -69,7 +79,7 @@ def lambda_handler(event, context):
         return {
             'statusCode': statusCode,
             'headers': headers,
-            'body': json.dumps({'message': 'Counter updated', 'count': updated_count})
+            'body': json.dumps({'message': 'Counter updated', 'count': updated_count, 'previous_count': current_count})
         }
 
     except Exception as e:
