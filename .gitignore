@@ -1,2 +1,11 @@
 config.js
+
 node_modules/
+
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+terraform.plan
+crash.log
+*.tfvars
