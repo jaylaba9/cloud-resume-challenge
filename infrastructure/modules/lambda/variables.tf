@@ -1,11 +1,3 @@
-################
-# MAIN VARIABLES FILE
-################
-
-variable table_name {
-  description = "DynamoDB table name"
-}
-
 variable lambda_function_path {
   description = "Path for the lambda function"
 }
@@ -20,4 +12,8 @@ variable lambda_handler {
 
 variable lambda_runtime {
   description = "Lambda function runtime"
+}
+
+variable lambda_role_arn {
+  description = "IAM Role ARN for Lambda"
 }
