@@ -14,8 +14,12 @@ resource "aws_iam_role" "lambda_role" {
 }
 
 # logging to CloudWatch permissions
-resource "aws_iam_policy_attachment" "lambda_logs" {
-  name = "lambda_logs"
-  roles = [aws_iam_role.lambda_role.name]
+resource "aws_iam_role_policy_attachment" "lambda_logs" {
+  role = aws_iam_role.lambda_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_microservice" {
+  role = aws_iam_role.lambda_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
 }

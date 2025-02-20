@@ -19,3 +19,11 @@ module lambda {
   lambda_runtime = var.lambda_runtime
   lambda_role_arn = module.iam.lambda_role_arn
 }
+
+module api_gateway {
+  source = "./modules/api_gateway"
+  api_name = var.api_name
+  resource_path = var.resource_path
+  lambda_function_arn = module.lambda.lambda_function_arn
+  lambda_invoke_arn = module.lambda.lambda_invoke_arn
+}
