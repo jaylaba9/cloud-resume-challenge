@@ -4,7 +4,7 @@ import boto3
 # dynamodb initialization
 client = boto3.client('dynamodb')
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('crc-website-visitor-counter')
+table = dynamodb.Table('crc-website-table-tf')
 
 def lambda_handler(event, context):
     statusCode = 200
