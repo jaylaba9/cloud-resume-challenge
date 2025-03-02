@@ -17,7 +17,7 @@ jobs:
 
       - name: Create config.js from secret
         run: |
-          echo "export const APIURL = '${{ secrets.APIURL }}';" > ../../frontend/script/config.js
+          echo "export const APIURL = '${{ secrets.APIURL }}';" > frontend/script/config.js
 
       - name: Install Cypress
         run: npm install cypress
