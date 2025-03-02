@@ -15,6 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Create config.js from secret
+        run: |
+          echo "export const APIURL = '${{ secrets.APIURL }}';" > ../../frontend/script/config.js
+
       - name: Install Cypress
         run: npm install cypress
 
