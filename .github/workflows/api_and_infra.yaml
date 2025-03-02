@@ -19,7 +19,7 @@ jobs:
         run: npm install cypress
 
       - name: Run Cypress API tests
-        run: npx cypress run --spec "tests/cypress/e2e/api_*.spec.cy.js"
+        run: npx cypress run --config-file tests/cypress.config.js --spec "tests/cypress/e2e/api_*.spec.cy.js"
 
   deploy:
     name: Deploy Infrastructure and API
