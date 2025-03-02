@@ -1,0 +1,55 @@
+name: Test and deploy API and Infrastructure
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+      - 'infrastructure/**'
+
+jobs:
+  test-api:
+    name: Run API tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Cypress
+        run: npm install cypress
+
+      - name: Run Cypress API tests
+        run: npx cypress run --spec "tests/cypress/e2e/api_*.spec.cy.js"
+
+  deploy:
+    name: Deploy Infrastructure and API
+    runs-on: ubuntu-latest
+    needs: test-api
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::861276104231:role/github-actions-role
+          aws-region: eu-central-1
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Initialize Terraform
+        run: |
+          cd infrastructure
+          terraform init
+
+      - name: Plan Terraform changes
+        run: |
+          cd infrastructure
+          terraform plan -out=tfplan
+
+      - name: Apply Terraform changes
+        run: |
+          cd infrastructure
+          terraform apply -auto-approve tfplan
