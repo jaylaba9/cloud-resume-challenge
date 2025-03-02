@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../frontend/script/config.js';
+import { APIURL } from '../../../frontend/script/config.js';
 
 // To run this test properly, one have to manually delete Item with id: 'visitor' from the DynamoDB table
 
@@ -6,7 +6,7 @@ describe('CRC API - initialize item', () => {
   it('should initialize item "visitor" with value = 0 and increment it', () => {
     cy.request({
       method: 'POST',
-      url: apiUrl,
+      url: APIURL,
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(200);

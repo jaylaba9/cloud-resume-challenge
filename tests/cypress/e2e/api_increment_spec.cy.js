@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../frontend/script/config.js';
+import { APIURL } from '../../../frontend/script/config.js';
 
 /* 
  Disclaimer: Probably it would be better to first send GET request to retrieve current value of count. However, I have created the API to handle only POST requests on purpose.
@@ -10,7 +10,7 @@ describe('CRC API - Increment counter in database', () => {
   it('should increment the value of count in DynamoDB', () => {
     cy.request({
       method: 'POST',
-      url: apiUrl,
+      url: APIURL,
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(200);

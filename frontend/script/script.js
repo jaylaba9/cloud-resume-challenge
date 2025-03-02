@@ -1,5 +1,5 @@
 'use strict';
-import { apiUrl } from './config.js';
+import { APIURL } from './config.js';
 
 const visitorCount = document.querySelector('.visitor-count');
 
@@ -14,7 +14,7 @@ const requestOptions = {
 
 async function fetchData() {
   try {
-    const response = await fetch(apiUrl, requestOptions);
+    const response = await fetch(APIURL, requestOptions);
     if (!response.ok) {
       throw new Error('Response was not ok!');
     }
