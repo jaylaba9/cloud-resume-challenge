@@ -20,7 +20,6 @@ jobs:
 
       - name: Run Cypress API tests
         run: npx cypress run --config-file tests/cypress/cypress.config.js --spec "tests/cypress/e2e/api_*_spec.cy.js"
-        working-directory: tests/cypress
 
   deploy:
     name: Deploy Infrastructure and API
