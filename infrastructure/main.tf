@@ -27,3 +27,12 @@ module api_gateway {
   lambda_function_arn = module.lambda.lambda_function_arn
   lambda_invoke_arn = module.lambda.lambda_invoke_arn
 }
+
+terraform {
+  backend "s3" {
+    bucket = "crc-tfstatebucket"
+    key = "terraform.tfstate"
+    region = eu-central-1
+    use_lockfile = true
+  }
+}

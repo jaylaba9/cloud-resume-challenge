@@ -8,6 +8,5 @@ terraform.tfstate.backup
 .terraform.lock.hcl
 terraform.plan
 crash.log
-*.tfvars
 
 lambda.zip
