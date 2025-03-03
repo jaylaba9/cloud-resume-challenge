@@ -32,7 +32,7 @@ terraform {
   backend "s3" {
     bucket = "crc-tfstatebucket"
     key = "terraform.tfstate"
-    region = eu-central-1
+    region = "eu-central-1"
     use_lockfile = true
   }
 }
