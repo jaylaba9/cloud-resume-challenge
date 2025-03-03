@@ -9,5 +9,5 @@ terraform {
 
 provider "aws" {
   region = "eu-central-1"
- # profile = "my-prod-profile" -> uncomment this line when using Terraform locally(not via GitHub Actions)
+ #profile = "my-prod-profile" # uncomment this line when using Terraform locally(not via GitHub Actions)
 }
