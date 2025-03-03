@@ -9,5 +9,5 @@ terraform {
 
 provider "aws" {
   region = "eu-central-1"
-  profile = terraform.workspace == "default" ? "my-prod-profile" : null # use profile when using Terraform locally, otherwise don't use one(for GitHub actions)
+ # profile = "my-prod-profile" -> uncomment this line when using Terraform locally(not via GitHub Actions)
 }
