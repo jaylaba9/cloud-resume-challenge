@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -48,6 +48,179 @@
             <h6>Technical Support | 2021-07 - present</h6>
           </div>
         </div>
+      </div>
+    </main>
+  </body>
+</html> 
+-->
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jaroslaw Laba - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./script/script.js" defer></script>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <p class="text-gray-300 visitor-count"></p>
+    <!-- Header -->
+    <header class="text-center p-6">
+      <h1 class="text-3xl font-bold">Jarosław Łaba</h1>
+      <p class="text-gray-300">DevOps / Cloud Engineer</p>
+      <div class="mt-2">
+        <a
+          href="mailto:jarek.laba@gmail.com"
+          class="text-blue-400 hover:underline"
+          >📧 jarek.laba@gmail.com</a
+        >
+        |
+        <a
+          href="https://github.com/jaylaba9"
+          target="_blank"
+          class="text-blue-400 hover:underline"
+          >🐙 GitHub</a
+        >
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-4xl mx-auto p-6 space-y-10">
+      <!-- About -->
+      <section>
+        <h2 class="text-xl font-semibold border-b border-gray-700 pb-2">
+          About me
+        </h2>
+        <p class="text-gray-300 mt-2">
+          Jestem inżynierem DevOps / Cloud z doświadczeniem w automatyzacji,
+          CI/CD oraz zarządzaniu infrastrukturą chmurową.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section>
+        <h2 class="text-xl font-semibold border-b border-gray-700 pb-2">
+          Skills
+        </h2>
+        <ul class="text-gray-300 mt-2 grid grid-cols-2 md:grid-cols-3 gap-3">
+          <li>✅ Docker & Kubernetes</li>
+          <li>✅ AWS / Azure / GCP</li>
+          <li>✅ Terraform / Ansible</li>
+          <li>✅ CI/CD (GitHub Actions, Jenkins)</li>
+          <li>✅ Monitoring (Prometheus, Grafana)</li>
+          <li>✅ Linux & Bash</li>
+        </ul>
+      </section>
+
+      <!-- Projects -->
+      <section>
+        <h2 class="text-xl font-semibold border-b border-gray-700 pb-2">
+          Projects
+        </h2>
+        <ul class="mt-2">
+          <li>
+            <h3 class="text-lg font-medium">🚀 The Cloud Resume Challenge</h3>
+            <p class="text-gray-300">
+              The website you are currently viewing is the result of completing
+              a comprehensive project designed to provide practical experience
+              in cloud architecture. The challenge involved:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 mt-1">
+              <li>
+                Developing and styling a resume using HTML and Tailwind CSS
+              </li>
+              <li>
+                Hosting the resume as a static website on AWS (S3) with HTTPS
+                and custom DNS
+              </li>
+              <li>
+                Implementing a visitor counter using JavaScript, a backend API
+                (AWS Lambda), and a database (DynamoDB)
+              </li>
+              <li>
+                Writing backend code in Python and E2E tests in Cypress.js
+              </li>
+              <li>
+                Managing infrastructure using Infrastructure as Code with
+                Terraform
+              </li>
+              <li>
+                Setting up CI/CD pipelines for both frontend and backend using
+                GitHub Actions
+              </li>
+              <li>
+                Implementing permission management using AWS IAM roles and
+                policies
+              </li>
+            </ul>
+            <p class="text-gray-400 mt-4 text-sm flex gap-4 flex-wrap">
+              <a
+                href="https://github.com/jaylaba9/cloud-resume-challenge"
+                class="hover:underline hover:text-white transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                href="#"
+                class="hover:underline hover:text-white transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog post
+              </a>
+              <a
+                href="https://cloudresumechallenge.dev/"
+                class="hover:underline hover:text-white transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Challenge website
+              </a>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Exp -->
+      <section>
+        <h2 class="text-xl font-semibold border-b border-gray-700 pb-2">
+          Experience
+        </h2>
+        <div class="mt-2">
+          <h3 class="text-lg font-medium">🏢 Comarch S.A.</h3>
+          <p class="text-gray-300 text-sm">
+            Technical Support (2021 - present)
+          </p>
+          <ul class="text-gray-300 mt-1 list-disc list-inside">
+            <li>Automatyzacja procesów CI/CD</li>
+            <li>Tworzenie infrastruktury jako kod</li>
+            <li>Monitorowanie systemów</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Certs -->
+      <section>
+        <h2 class="text-xl font-semibold border-b border-gray-700 pb-2">
+          Certificates
+        </h2>
+        <ul class="text-gray-300 mt-2">
+          <li>📜 AWS Certified Solutions Architect</li>
+          <li>📜 Certified Kubernetes Administrator (CKA)</li>
+          <li>📜 HashiCorp Certified: Terraform Associate</li>
+        </ul>
+      </section>
+
+      <!-- Download CV -->
+      <div class="text-center mt-10">
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        >
+          📄 Download CV
+        </button>
       </div>
     </main>
   </body>
