@@ -20,7 +20,7 @@ async function fetchData() {
     }
     const data = await response.json();
     countValue = data.count;
-    visitorCount.innerHTML = `Visitor count: ${countValue}`;
+    visitorCount.innerHTML = `Visits: ${countValue}`;
   } catch (error) {
     console.error(error);
   }
