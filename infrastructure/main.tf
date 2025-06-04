@@ -34,5 +34,6 @@ terraform {
     key = "terraform.tfstate"
     region = "eu-central-1"
     use_lockfile = true
+   # profile = "my-prod-profile" # uncomment this line when using Terraform locally(not via GitHub Actions)
   }
 }
