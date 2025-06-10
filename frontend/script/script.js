@@ -2,6 +2,7 @@
 import { APIURL } from './config.js';
 
 const visitorCount = document.querySelector('.visitor-count');
+const downloadButton = document.querySelector('.download');
 
 let countValue = 0;
 
