@@ -8,11 +8,11 @@ const downloadButton = document.querySelector('.download');
 async function downloadResume() {
   try {
     const response = await fetch(
-      'https://mycrcstaticwebsite.s3.eu-central-1.amazonaws.com/public/cv.pdf'
+      'https://mycrcstaticwebsite.s3.eu-central-1.amazonaws.com/public/cv.pdf',
     );
     if (!response.ok) {
       throw new Error(
-        `An error occured during download: ${response.status} ${response.statusText}`
+        `An error occured during download: ${response.status} ${response.statusText}`,
       );
     }
 
@@ -53,7 +53,7 @@ async function fetchData() {
     }
     const data = await response.json();
     countValue = data.count;
-    visitorCount.innerHTML = `Visits: ${countValue}`;
+    visitorCount.innerHTML = `Visits: ${countValue} (most of them are probably mine)`;
   } catch (error) {
     console.error(error);
   }
