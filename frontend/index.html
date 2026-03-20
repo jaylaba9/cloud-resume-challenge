@@ -138,7 +138,7 @@
                 the project
               </li>
             </ul>
-            <p class="text-gray-400 mt-4 text-sm flex gap-4 flex-wrap">
+            <p class="text-gray-400 mt-2 text-sm flex gap-4 flex-wrap">
               <a
                 href="https://github.com/jaylaba9/cloud-resume-challenge"
                 class="hover:underline hover:text-white transition"
@@ -162,6 +162,45 @@
                 rel="noopener noreferrer"
               >
                 Challenge website
+              </a>
+            </p>
+          </li>
+
+          <li class="mt-2">
+            <h3 class="text-lg font-medium">DevOps Job Market Analyzer</h3>
+            <p class="text-gray-300">
+              Interactive dashboard built with Python, Streamlit, and Docker
+              that scrapes, processes, and visualizes the most in-demand
+              technologies in the DevOps landscape based on real-time data from
+              one of the IT job boards. Features:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 mt-1">
+              <li>
+                Automated Scraping: Periodically fetches job postings from IT
+                job board API.
+              </li>
+              <li>
+                Smart Caching: Uses st.cache_data and file-system checks to
+                prevent redundant scraping (scans once every 7 days).
+              </li>
+              <li>
+                Data Normalization: Maps technology synonyms (e.g., "K8s",
+                "Amazon EKS" -> "Kubernetes") for accurate counting.
+              </li>
+              <li>
+                Interactive Visualization: Horizontal bar charts showing the Top
+                15 "Must-Have" skills.
+              </li>
+              <li>Containerized Environment: Fully dockerized.</li>
+            </ul>
+            <p class="text-gray-400 mt-2 text-sm flex gap-4 flex-wrap">
+              <a
+                href="https://github.com/jaylaba9/jobs_analyzer"
+                class="hover:underline hover:text-white transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
               </a>
             </p>
           </li>
