@@ -17,7 +17,7 @@ The outcome can be viewed at [jaylaba.com](https://jaylaba.com) and [here](https
 - **Backend**: AWS Lambda (Python), API Gateway, DynamoDB
 - **DevOps**: Terraform, GitHub Actions
 - **Other AWS Services**: S3, CloudFront, IAM, Certificate Manager, IAM Identity Center, AWS Organizations
-- **DNS & CDN**: Cloudflare
+- **DNS**: Cloudflare
 
 ## 🏗️ Project Architecture
 The diagram below illustrates the application architecture and the data flow:
