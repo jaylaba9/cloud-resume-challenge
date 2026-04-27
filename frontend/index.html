@@ -24,13 +24,42 @@
     <link rel="manifest" href="/site.webmanifest" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="./script/script.js" defer></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeInUp 1.5s ease-out forwards;
+      }
+    </style>
   </head>
   <body class="bg-gray-900 text-white font-sans">
     <p class="text-gray-300 visitor-count"></p>
     <!-- Header -->
     <header class="text-center p-6">
-      <h1 class="text-3xl font-bold">Jarosław Łaba</h1>
+      <!-- <h1 class="text-3xl font-bold">Jarosław Łaba</h1> -->
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400 pb-2"
+      >
+        Jarosław Łaba
+      </h1>
       <!-- <p class="text-gray-300">Support Engineer</p> -->
+      <div class="mt-2 flex justify-center items-center h-8">
+        <span
+          id="typewriter"
+          class="text-lg md:text-xl text-gray-300 font-mono"
+        ></span>
+        <span class="text-blue-400 text-xl font-bold animate-pulse ml-1"
+          >|</span
+        >
+      </div>
       <div class="mt-2">
         <a
           href="mailto:jarek.laba@gmail.com"
@@ -48,20 +77,21 @@
     </header>
 
     <!-- Main -->
-    <main class="max-w-4xl mx-auto p-6 space-y-5">
+    <main class="max-w-4xl mx-auto p-6 space-y-10 animate-fade-in">
       <!-- About -->
       <section>
         <h2 class="text-xl font-semibold border-b border-gray-700 pb-2">
           About me
         </h2>
         <p class="text-gray-300 mt-2">
-          Technical Support Consultant with 4+ years of experience supporting
-          M2M and IoT platforms in the telecommunications sector. Strong
-          hands-on background in Linux-based systems, Kubernetes environments,
-          monitoring (Prometheus, Grafana), and automation using Bash and
-          Python. Focused on ensuring system stability and continuously
-          improving operational processes, with additional experience in cloud
-          and infrastructure technologies gained through a personal project
+          Infrastructure-focused IT Specialist with 4+ years of managing complex
+          M2M/IoT telecommunications platforms. Strong background in Linux, with
+          hands-on experience troubleshooting Kubernetes environments and
+          utilizing Prometheus/Grafana for system observability. Focused on
+          reducing operational toil by developing automation scripts in Python
+          and Bash. Currently expanding my cloud capabilities through hands-on
+          implementation of AWS, Terraform, and CI/CD solutions. Ready to drive
+          reliability and automation in a Cloud/DevOps team.
         </p>
       </section>
 
@@ -70,27 +100,44 @@
         <h2 class="text-xl font-semibold border-b border-gray-700 pb-2">
           Skills
         </h2>
-        <ul class="text-gray-300 mt-2 space-y-2">
-          <li>
-            <b class="text-white font-medium">Cloud/IaC:</b> AWS, Terraform
-          </li>
-
-          <li>
-            <b class="text-white font-medium">OS & Scripting: </b>Linux, Bash,
-            Python
-          </li>
-          <li>
-            <b class="text-white font-medium">Containers: </b>Docker, Kubernetes
-          </li>
-          <li>
-            <b class="text-white font-medium">CI/CD: </b>GitHub Actions, Git
-          </li>
-          <li>
-            <b class="text-white font-medium">Monitoring: </b>Prometheus,
-            Grafana, Kibana
-          </li>
-          <li><b class="text-white font-medium">Databases: </b>SQL</li>
-        </ul>
+        <div class="flex flex-wrap gap-3 mt-4 text-sm">
+          <div
+            class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg shadow-sm hover:border-blue-400 transition-colors"
+          >
+            <b class="text-blue-400">Cloud/IaC:</b>
+            <span class="text-gray-300">AWS, Terraform</span>
+          </div>
+          <div
+            class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg shadow-sm hover:border-blue-400 transition-colors"
+          >
+            <b class="text-blue-400">OS & Scripting:</b>
+            <span class="text-gray-300">Linux, Bash, Python</span>
+          </div>
+          <div
+            class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg shadow-sm hover:border-blue-400 transition-colors"
+          >
+            <b class="text-blue-400">Containers:</b>
+            <span class="text-gray-300">Docker, Kubernetes</span>
+          </div>
+          <div
+            class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg shadow-sm hover:border-blue-400 transition-colors"
+          >
+            <b class="text-blue-400">CI/CD:</b>
+            <span class="text-gray-300">GitHub Actions, Git</span>
+          </div>
+          <div
+            class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg shadow-sm hover:border-blue-400 transition-colors"
+          >
+            <b class="text-blue-400">Monitoring:</b>
+            <span class="text-gray-300">Prometheus, Grafana, Kibana</span>
+          </div>
+          <div
+            class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg shadow-sm hover:border-blue-400 transition-colors"
+          >
+            <b class="text-blue-400">Databases:</b>
+            <span class="text-gray-300">SQL</span>
+          </div>
+        </div>
       </section>
 
       <!-- Projects -->
@@ -99,8 +146,12 @@
           Projects
         </h2>
         <ul class="mt-2">
-          <li>
-            <h3 class="text-lg font-medium">Cloud Resume Challenge</h3>
+          <li
+            class="bg-gray-800/50 border border-gray-700 p-6 rounded-xl hover:bg-gray-800 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 mt-4 first:mt-2"
+          >
+            <h3 class="text-xl font-bold text-white mb-2">
+              Cloud Resume Challenge
+            </h3>
             <p class="text-gray-300">
               The website you are currently viewing is the result of completing
               a comprehensive project designed to provide practical experience
@@ -166,8 +217,63 @@
             </p>
           </li>
 
-          <li class="mt-2">
-            <h3 class="text-lg font-medium">DevOps Job Market Analyzer</h3>
+          <li
+            class="bg-gray-800/50 border border-gray-700 p-6 rounded-xl hover:bg-gray-800 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 mt-4 first:mt-2"
+          >
+            <h3 class="text-xl font-bold text-white mb-2">
+              Cloud-Native FastAPI Microservice
+            </h3>
+            <p class="text-gray-300">
+              A FastAPI application deployed on a highly available and secure
+              AWS infrastructure using IaC. This project demonstrates modern
+              DevOps practices, including containerization, private networking,
+              and automated secrets management. Key implementations:
+            </p>
+            <ul class="list-disc list-inside text-gray-300 mt-1">
+              <li>
+                Developed a Python (FastAPI) backend to efficiently handle CRUD
+                operations
+              </li>
+              <li>
+                Architected and managed IaC via Terraform, configuring a
+                high-availability Multi-AZ environment
+              </li>
+              <li>
+                Deployed infrastructure on AWS utilizing custom VPC, ECS
+                Fargate, RDS, ALB, and IAM
+              </li>
+              <li>
+                Optimized containerization using Docker with multi-stage builds
+                and layer caching
+              </li>
+              <li>
+                Hardened security by isolating the PostgreSQL database in
+                private subnets and automating credential management via AWS
+                Secrets Manager
+              </li>
+              <li>
+                Streamlined monitoring by implementing centralized logging with
+                AWS CloudWatch
+              </li>
+            </ul>
+            <p class="text-gray-400 mt-2 text-sm flex gap-4 flex-wrap">
+              <a
+                href="https://github.com/jaylaba9/jobs_analyzer"
+                class="hover:underline hover:text-white transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </p>
+          </li>
+
+          <li
+            class="bg-gray-800/50 border border-gray-700 p-6 rounded-xl hover:bg-gray-800 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 mt-4 first:mt-2"
+          >
+            <h3 class="text-xl font-bold text-white mb-2">
+              DevOps Job Market Analyzer
+            </h3>
             <p class="text-gray-300">
               Interactive dashboard built with Python, Streamlit, and Docker
               that scrapes, processes, and visualizes the most in-demand
@@ -177,25 +283,25 @@
             <ul class="list-disc list-inside text-gray-300 mt-1">
               <li>
                 Automated Scraping: Periodically fetches job postings from IT
-                job board API.
+                job board API
               </li>
               <li>
                 Smart Caching: Uses st.cache_data and file-system checks to
-                prevent redundant scraping (scans once every 7 days).
+                prevent redundant scraping (scans once every 7 days)
               </li>
               <li>
                 Data Normalization: Maps technology synonyms (e.g., "K8s",
-                "Amazon EKS" -> "Kubernetes") for accurate counting.
+                "Amazon EKS" -> "Kubernetes") for accurate counting
               </li>
               <li>
                 Interactive Visualization: Horizontal bar charts showing the Top
-                15 "Must-Have" skills.
+                15 "Must-Have" skills
               </li>
-              <li>Containerized Environment: Fully dockerized.</li>
+              <li>Containerized Environment: Fully dockerized</li>
             </ul>
             <p class="text-gray-400 mt-2 text-sm flex gap-4 flex-wrap">
               <a
-                href="https://github.com/jaylaba9/jobs_analyzer"
+                href="https://github.com/jaylaba9/products-api"
                 class="hover:underline hover:text-white transition"
                 target="_blank"
                 rel="noopener noreferrer"

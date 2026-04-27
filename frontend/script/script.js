@@ -60,3 +60,50 @@ async function fetchData() {
 }
 
 fetchData();
+
+// --- Typewriter Effect ---
+const textElement = document.getElementById('typewriter');
+
+const phrases = [
+  'Automating Infrastructure',
+  'Building Cloud-Native Systems',
+  'Troubleshooting complex issues',
+  'AWS, Linux, K8s, Terraform, Python',
+];
+
+// Funkcja pomocnicza do usypiania pętli
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const writeLoop = async () => {
+  let currentPhraseIndex = 0;
+
+  while (true) {
+    let currentWord = phrases[currentPhraseIndex];
+
+    // Typing letter by letter
+    for (let i = 0; i < currentWord.length; i++) {
+      textElement.innerText = currentWord.substring(0, i + 1);
+      await sleep(75); // typing speed
+    }
+
+    // Wait after typing full word
+    await sleep(2000);
+
+    // Removing letter by letter
+    for (let i = currentWord.length; i > 0; i--) {
+      textElement.innerText = currentWord.substring(0, i - 1);
+      await sleep(40); // removing speed
+    }
+
+    await sleep(500);
+
+    // next phrase
+    currentPhraseIndex++;
+    if (currentPhraseIndex === phrases.length) {
+      currentPhraseIndex = 0;
+    }
+  }
+};
+
+// animation start
+writeLoop();
