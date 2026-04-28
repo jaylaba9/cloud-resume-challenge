@@ -68,10 +68,9 @@ const phrases = [
   'Automating Infrastructure',
   'Building Cloud-Native Systems',
   'Troubleshooting complex issues',
-  'AWS, Linux, K8s, Terraform, Python',
 ];
 
-// Funkcja pomocnicza do usypiania pętli
+// helper function
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const writeLoop = async () => {
@@ -107,3 +106,17 @@ const writeLoop = async () => {
 
 // animation start
 writeLoop();
+
+// --- projects accordion ---
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach((card) => {
+  card.addEventListener('click', () => {
+    const details = card.querySelector('.project-details');
+    const chevron = card.querySelector('.chevron');
+
+    details.classList.toggle('hidden');
+
+    chevron.classList.toggle('rotate-180');
+  });
+});
